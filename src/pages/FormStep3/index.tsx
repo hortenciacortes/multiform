@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import * as C from "./styles";
+import * as C from "../styles";
 import { Theme } from "../../components/Theme";
 import { FormActions, useForm } from "../../contexts/FormContext";
 import { ChangeEvent, useEffect } from "react";
@@ -22,8 +22,7 @@ export const FormStep3 = () => {
 
     const handleNextStep = () => {
         if (state.email !== '' && state.github !== '') {
-            console.log(state)
-            alert('Cadastro enviado com sucesso');
+            navigate('/step4');
         } else {
             alert('Preencha todos os campos');
         }
@@ -35,6 +34,7 @@ export const FormStep3 = () => {
             payload: e.target.value
         })
     }
+
     const handleGithubChange = (e: ChangeEvent<HTMLInputElement>) => {
         dispatch({
             type: FormActions.setGithub,
@@ -46,7 +46,7 @@ export const FormStep3 = () => {
         <Theme>
             <C.Container>
                 <p>Passo {state.currentStep}/3</p>
-                <h1>Legal {state.name}, onde te achamos?</h1>
+                <h2>Legal {state.name.substring(0, state.name.indexOf(' '))}, onde te achamos?</h2>
                 <p>Preencha com seus contatos para conseguirmos entrar em contato.</p>
 
                 <hr />

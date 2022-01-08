@@ -4,7 +4,7 @@ export const Container = styled.div<{ selected: boolean }>`
     display: flex;
     border: 2px solid ${props => props.selected ? '#25CD89' : '#16195C'} ;
     border-radius: 10px;
-    padding: 20px;
+    padding: 10px;
     margin-bottom: 15px;
     align-items: center;
     cursor: pointer;
@@ -15,8 +15,8 @@ export const Container = styled.div<{ selected: boolean }>`
 `;
 
 export const Icon = styled.div`
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     background-color: #191A59;
     display: flex;

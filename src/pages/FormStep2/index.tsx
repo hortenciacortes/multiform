@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import * as C from "./styles";
+import * as C from "../styles";
 import { Theme } from "../../components/Theme";
 import { FormActions, useForm } from "../../contexts/FormContext";
 import { useEffect } from "react";
@@ -40,7 +40,7 @@ export const FormStep2 = () => {
         <Theme>
             <C.Container>
                 <p>Passo {state.currentStep}/3</p>
-                <h1>{state.name}, o que melhor descreve você?</h1>
+                <h2>{state.name.substring(0, state.name.indexOf(' '))}, o que melhor descreve você?</h2>
                 <p>Escolha a opção que melhor condiz com seu estado atual, profissionalmente.</p>
 
                 <hr />

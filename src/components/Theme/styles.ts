@@ -4,6 +4,11 @@ export const Container = styled.div`
     background-color: #02044A;
     color: #FFF;
     min-height: 100vh;
+    padding: 0 40px;
+
+    @media (max-width: 600px){
+        padding: 0 20px;
+    }
 `;
 
 export const Area = styled.div`
@@ -20,11 +25,15 @@ export const Steps = styled.div`
 `;
 
 export const Sidebar = styled.div`
-    width: 250px;
+    width: 200px;
     border-radius: 1px solid #16195C;
+
+    @media (max-width: 520px){
+        width: 110px;
+    }
 `;
 
 export const Page = styled.div`
     flex: 1;
-    padding: 40px 0 0 40px;
+    padding: 20px 0 0 40px;
 `;

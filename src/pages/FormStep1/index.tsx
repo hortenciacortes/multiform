@@ -1,12 +1,12 @@
-import { useNavigate  } from "react-router-dom";
-import * as C from "./styles";
+import { useNavigate } from "react-router-dom";
+import * as C from "../styles";
 import { Theme } from "../../components/Theme";
 import { FormActions, useForm } from "../../contexts/FormContext";
 import { ChangeEvent, useEffect } from "react";
 
 export const FormStep1 = () => {
-    const navigate = useNavigate ();
-    const { state, dispatch} = useForm();
+    const navigate = useNavigate();
+    const { state, dispatch } = useForm();
 
     useEffect(() => {
         dispatch({
@@ -16,10 +16,10 @@ export const FormStep1 = () => {
     }, []);
 
     const handleNextStep = () => {
-        if(state.name != ''){
+        if (state.name.substring(0, state.name.indexOf(' '))) {
             navigate('/step2')
-        }else{
-            alert('Preencha todos os campos')
+        } else {
+            alert('Preencha seu nome completo')
         }
     }
 
@@ -30,18 +30,18 @@ export const FormStep1 = () => {
         })
     }
 
-    return(
+    return (
         <Theme>
             <C.Container>
                 <p>Passo {state.currentStep}/3</p>
-                <h1>Vamos começar com seu nome</h1>
+                <h2>Vamos começar com seu nome</h2>
                 <p>Preencha o campo abaixo com seu nome completo.</p>
 
                 <hr />
 
                 <label>
                     Seu nome completo
-                    <input 
+                    <input
                         type="text"
                         autoFocus
                         value={state.name}

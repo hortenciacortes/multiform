@@ -34,6 +34,10 @@ export const IconArea = styled.div<{ active: boolean }>`
     display: flex;
     align-items: center;
     justify-content: center;
+
+    @media (max-width: 520px){
+        display: none;
+    }
 `;
 export const Point = styled.div<{ active: boolean }>`
     width: 6px;
@@ -43,4 +47,8 @@ export const Point = styled.div<{ active: boolean }>`
     margin-left: 30px;
     margin-right: -6px;
     background-color: ${props => props.active ? '#25CD89' : '#02044A'};
+
+    @media (max-width: 520px){
+        margin-left: 0px;
+    }
 `;
