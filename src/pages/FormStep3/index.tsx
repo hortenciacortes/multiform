@@ -27,7 +27,7 @@ export const FormStep3 = () => {
         } else if (!validEmail.test(state.email)) {
             alert('Email incorreto')
         } else {
-            alert('Preencha todos os campos');
+            alert('Preencha seu GitHub');
         }
     }
 
