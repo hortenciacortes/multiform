@@ -42,7 +42,7 @@ export const FormStep4 = () => {
                 <h4>Informações enviadas:</h4>
                 <p>Nome: {state.name}</p>
                 <p>Email: {state.email}</p>
-                <p>GitHub: {state.github}</p>
+                <p>GitHub: https://github.com/{state.github}</p>
                 <p>Nível: {state.level === 0 ? 'Iniciante' : 'Programador'}</p>
 
                 <Link to="/step3" className="backButton">Voltar</Link>

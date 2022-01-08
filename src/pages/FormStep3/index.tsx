@@ -21,8 +21,11 @@ export const FormStep3 = () => {
     }, []);
 
     const handleNextStep = () => {
-        if (state.email !== '' && state.github !== '') {
+        var validEmail = /\S+@\S+\.\S+/;
+        if (state.email !== '' && state.github !== '' && validEmail.test(state.email)) {
             navigate('/step4');
+        } else if (!validEmail.test(state.email)) {
+            alert('Email incorreto')
         } else {
             alert('Preencha todos os campos');
         }
@@ -38,7 +41,7 @@ export const FormStep3 = () => {
     const handleGithubChange = (e: ChangeEvent<HTMLInputElement>) => {
         dispatch({
             type: FormActions.setGithub,
-            payload: e.target.value
+            payload: e.target.value.substring(19)
         })
     }
 
@@ -63,7 +66,7 @@ export const FormStep3 = () => {
                     Qual o seu GitHub?
                     <input
                         type="url"
-                        value={state.github}
+                        value={`https://github.com/${state.github}`}
                         onChange={handleGithubChange}
                     />
                 </label>
